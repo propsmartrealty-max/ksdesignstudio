@@ -15,8 +15,8 @@ import blogMumbaiMinimalism from './assets/images/blog_mumbai_minimalism.png';
 import blogWakadTech from './assets/images/blog_wakad_tech.png';
 import blogBandraBohemian from './assets/images/blog_bandra_bohemian.png';
 import blogRavetTrends from './assets/images/blog_ravet_trends.png';
-const japandiTheme = new URL('../brain/1af2f286-70f6-4bc7-b2c4-68ec646b50ca/japandi_interior_narrative_1776600452048.png', import.meta.url).href;
-const industrialTheme = new URL('../brain/1af2f286-70f6-4bc7-b2c4-68ec646b50ca/industrial_luxe_narrative_1776600486574.png', import.meta.url).href;
+import japandiTheme from './assets/images/japandi_theme.png';
+import industrialTheme from './assets/images/industrial_theme.png';
 
 export const PROJECTS: Project[] = [
   {

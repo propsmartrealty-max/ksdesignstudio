@@ -1,8 +1,16 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  resolve: {
+    dedupe: ['react', 'react-dom'],
+    alias: {
+      react: path.resolve(__dirname, './node_modules/react'),
+      'react-dom': path.resolve(__dirname, './node_modules/react-dom')
+    }
+  },
   plugins: [react()],
   // Use root base for dev to prevent navigation hangs, but relative for production
   base: mode === 'production' ? './' : '/',
@@ -24,9 +32,6 @@ export default defineConfig(({ mode }) => ({
         assetFileNames: 'assets/[ext]/[name]-[hash].[ext]'
       },
     },
-  },
-  optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom', 'lucide-react', '@google/genai']
   },
   server: {
     port: 5173,
