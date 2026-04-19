@@ -91,7 +91,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className={`text-[12px] uppercase xl:tracking-[0.2em] lg:tracking-[0.1em] font-black transition-all duration-500 relative group/link py-1 whitespace-nowrap ${
+                  className={`text-[13px] uppercase xl:tracking-[0.15em] lg:tracking-[0.05em] font-black transition-all duration-500 relative group/link py-1 whitespace-nowrap ${
                     isActive(link.href) 
                       ? 'text-brass drop-shadow-[0_0_10px_rgba(212,175,55,0.3)] font-black' 
                       : (scrolled ? 'text-brass/90 hover:text-[#1A1A1A]' : 'text-brass hover:text-white')
@@ -108,7 +108,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
             }`}>
               <Link 
                 to="/contact" 
-                className={`text-[12px] uppercase tracking-[0.2em] font-black transition-all duration-500 xl:px-8 lg:px-5 py-3 rounded-full whitespace-nowrap shadow-xl ${
+                className={`text-[13px] uppercase tracking-[0.15em] font-black transition-all duration-500 xl:px-8 lg:px-5 py-3 rounded-full whitespace-nowrap shadow-xl ${
                   scrolled ? 'bg-[#1A1A1A] text-white hover:bg-brass' : 'bg-brass text-white hover:bg-white hover:text-[#1A1A1A]'
                 }`}
               >
