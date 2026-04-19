@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-brass: #D4AF37;
+  --color-sand: #FFFFFF;
+  --color-charcoal: #1A1A1A;
+  --color-surface: #F8FAFC;
+  --color-mocha: #3D2B1F;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-[#1A1A1A] font-sans overflow-x-hidden antialiased;
+    font-family: 'Outfit', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+    @apply tracking-tight font-black;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+.grain {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+  animation: grain 8s steps(10) infinite;
+}
+
+@keyframes grain {
+  0%, 100% { transform:translate(0, 0) }
+  10% { transform:translate(-5%, -10%) }
+  50% { transform:translate(-15%, 10%) }
+}
+
+/* Glassmorphism */
+.glass {
+  @apply bg-white/60 backdrop-blur-xl border border-white/30 shadow-[0_4px_12px_rgba(0,0,0,0.03)];
+}
+
+.glass-dark {
+  @apply bg-charcoal/70 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.2)];
+}
+
+/* Refined Premium Animations */
+.animate-slow-zoom {
+  animation: slow-zoom 20s infinite alternate cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+@keyframes slow-zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 1.5s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1.2s ease-out forwards;
+}
+
+/* Architectural Drawing Animation */
+@keyframes draw-path {
+  0% { stroke-dashoffset: 1000; opacity: 0; }
+  50% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+.animate-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw-path 3s ease-in-out infinite;
+}
+
+/* Sophisticated Scan Animation */
+@keyframes blueprint-scan {
+  0% { top: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.animate-blueprint-scan {
+  animation: blueprint-scan 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#F7F3F0];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#D4AF37]/20 hover:bg-[#D4AF37]/50 transition-colors rounded-full;
+}
+
+.transition-luxury {
+  @apply transition-all duration-700 ease-in-out;
+}
+
+.parallax-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  z-index: -1;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Architectural Design System Tokens */
+:root {
+  --brass: #D4AF37;
+  --charcoal: #1A1A1A;
+}
+
+.architect-grid {
+  background-image: 
+    linear-gradient(to right, rgba(181, 166, 66, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(181, 166, 66, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.architect-grid-fine {
+  background-image: 
+    linear-gradient(to right, rgba(181, 166, 66, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(181, 166, 66, 0.03) 1px, transparent 1px);
+  background-size: 10px 10px;
+}
+
+.blueprint-line {
+  position: relative;
+}
+
+.blueprint-line::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, var(--brass) 10%, transparent 10%);
+  background-size: 10px 1px;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.glass-premium {
+  @apply bg-white/40 backdrop-blur-3xl border border-white/40 shadow-[0_20px_50px_rgba(0,0,0,0.1)] ring-1 ring-white/20;
+}
+
+.glass-surface {
+  @apply bg-white/30 backdrop-blur-[40px] border border-white/20 shadow-inner;
+}
+
+.text-annotation {
+  @apply text-[8px] uppercase tracking-[0.5em] font-black text-brass/40;
+}
+
+/* Atelier Genesis Monograph Cursor */
+.custom-cursor {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(181, 166, 66, 0.3);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  transition: transform 0.1s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-cursor::after {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: var(--brass);
+  border-radius: 50%;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
