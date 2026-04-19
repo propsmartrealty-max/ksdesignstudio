@@ -81,17 +81,17 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
           </Link>
 
           {/* Floating Pill Navigation */}
-          <div className={`hidden lg:flex items-center transition-all duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] px-10 py-4 rounded-full border transition-luxury ${
+          <div className={`hidden lg:flex items-center transition-all duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] xl:px-8 lg:px-5 py-4 rounded-full border transition-luxury ${
             scrolled 
               ? 'bg-white/70 backdrop-blur-3xl shadow-[0_20px_40px_rgba(0,0,0,0.08)] border-white/50' 
               : 'bg-white/10 border-white/20 backdrop-blur-xl shadow-lg'
           }`}>
-            <div className="flex items-center space-x-12">
+            <div className="flex items-center xl:space-x-8 lg:space-x-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.href}
-                  className={`text-[10px] uppercase tracking-[0.4em] font-black transition-all duration-500 relative group/link py-1 whitespace-nowrap ${
+                  className={`text-[12px] uppercase xl:tracking-[0.2em] lg:tracking-[0.1em] font-black transition-all duration-500 relative group/link py-1 whitespace-nowrap ${
                     isActive(link.href) 
                       ? 'text-brass drop-shadow-[0_0_10px_rgba(212,175,55,0.3)] font-black' 
                       : (scrolled ? 'text-brass/90 hover:text-[#1A1A1A]' : 'text-brass hover:text-white')
@@ -103,12 +103,12 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
               ))}
             </div>
 
-            <div className={`flex items-center ml-12 pl-12 border-l transition-colors duration-700 h-6 ${
+            <div className={`flex items-center xl:ml-8 lg:ml-4 xl:pl-8 lg:pl-4 border-l transition-colors duration-700 h-6 ${
               scrolled ? 'border-zinc-900/10' : 'border-white/20'
             }`}>
               <Link 
                 to="/contact" 
-                className={`text-[10px] uppercase tracking-[0.4em] font-black transition-all duration-500 px-10 py-4 rounded-full whitespace-nowrap shadow-xl ${
+                className={`text-[12px] uppercase tracking-[0.2em] font-black transition-all duration-500 xl:px-8 lg:px-5 py-3 rounded-full whitespace-nowrap shadow-xl ${
                   scrolled ? 'bg-[#1A1A1A] text-white hover:bg-brass' : 'bg-brass text-white hover:bg-white hover:text-[#1A1A1A]'
                 }`}
               >
