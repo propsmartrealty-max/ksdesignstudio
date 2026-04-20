@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import AIAssistant from './components/AIAssistant';
@@ -134,13 +133,11 @@ const AppContent: React.FC = () => {
       )}
     </div>
   );
-};
 
 const App: React.FC = () => {
-  // Support both Vercel (root) and GitHub Pages (subdirectory)
-  const basename = window.location.hostname.includes('github.io') 
-    ? '/ksdesignstudio' 
-    : '/';
+  const isGitHubPages = window.location.hostname.includes('github.io');
+  const Router: any = isGitHubPages ? HashRouter : BrowserRouter;
+  const basename = isGitHubPages ? '/ksdesignstudio' : '/';
 
   return (
     <AppProvider>
