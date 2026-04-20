@@ -64,11 +64,11 @@ const Contact: React.FC = () => {
         timestamp: new Date().toLocaleString(),
         status: 'Unread'
       };
-      const existingLeads = JSON.parse(localStorage.getItem('ks_leads') || '[]');
-      localStorage.setItem('ks_leads', JSON.stringify([newLead, ...existingLeads]));
+      const existingLeads = safeStorageGet<any[]>('ks_leads', []);
+      safeStorageSet('ks_leads', [newLead, ...existingLeads]);
       
       setStatus('success');
-      setFormData({ name: '', email: '', projectType: 'Residential Interior', message: '' });
+      setFormData({ name: '', email: '', phone: '', projectType: 'Residential Interior', message: '' });
       
       // Reset status after a few seconds
       setTimeout(() => setStatus('idle'), 5000);
