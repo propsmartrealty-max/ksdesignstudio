@@ -35,9 +35,35 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <link rel="apple-touch-icon" href="icon-512.png" />
   <link rel="stylesheet" href="src/index.css">
+  <style>
+    #root:empty {
+      background: #1A1A1A;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #root:empty::after {
+      content: 'ATELIER GENESIS';
+      font-family: serif;
+      color: #999;
+      letter-spacing: 0.5em;
+      font-size: 10px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0% { opacity: 0.2; } 50% { opacity: 0.5; } 100% { opacity: 0.2; } }
+  </style>
 </head>
 <body>
   <div id="root"></div>
+  <script>
+    window.addEventListener('error', function(e) {
+      if (e.target.tagName === 'SCRIPT') {
+        console.error('KS Design Boot Error: Script failed to load from ' + e.target.src);
+        document.body.innerHTML += '<div style="position:fixed;bottom:20px;left:20px;color:#444;font-size:10px;font-family:monospace;z-index:9999;">BOOT_LINK_FAILURE: Check Vercel asset configuration.</div>';
+      }
+    }, true);
+  </script>
   <script type="module" src="src/main.tsx"></script>
 </body>
 </html>
