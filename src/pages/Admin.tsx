@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Database, Lock, Eye, Trash2, CheckCircle, Clock, Search, LogOut } from 'lucide-react';
+import { safeStorageGet, safeStorageSet } from '../utils/storage';
 
 interface Lead {
   id: number;
@@ -22,8 +23,7 @@ const Admin: React.FC = () => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      const storedLeads = JSON.parse(localStorage.getItem('ks_leads') || '[]');
-      setLeads(storedLeads);
+      setLeads(safeStorageGet<Lead[]>('ks_leads', []));
     }
   }, [isAuthenticated]);
 
@@ -40,7 +40,7 @@ const Admin: React.FC = () => {
     if (window.confirm("Permanently purge this lead from the Sovereign Vault?")) {
       const updatedLeads = leads.filter(l => l.id !== id);
       setLeads(updatedLeads);
-      localStorage.setItem('ks_leads', JSON.stringify(updatedLeads));
+      safeStorageSet('ks_leads', updatedLeads);
     }
   };
 
@@ -49,7 +49,7 @@ const Admin: React.FC = () => {
       l.id === id ? { ...l, status: l.status === 'Resolved' ? 'Unread' : 'Resolved' } : l
     );
     setLeads(updatedLeads);
-    localStorage.setItem('ks_leads', JSON.stringify(updatedLeads));
+    safeStorageSet('ks_leads', updatedLeads);
   };
 
   const filteredLeads = leads.filter(l => 

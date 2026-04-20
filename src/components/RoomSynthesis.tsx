@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { synthesizeRoom } from '../services/gemini';
 import { Sparkles, Loader2, FileText, CheckCircle2, ArrowRight } from 'lucide-react';
+import { safeStorageGet } from '../utils/storage';
 
 const RoomSynthesis: React.FC = () => {
   const [selectedRoom, setSelectedRoom] = useState<string>('Master Suite');
@@ -11,8 +12,8 @@ const RoomSynthesis: React.FC = () => {
     setIsGenerating(true);
     setScript(null);
 
-    const styleDNA = JSON.parse(localStorage.getItem('KS_STYLE_DNA') || 'null');
-    const paletteDNA = JSON.parse(localStorage.getItem('KS_PALETTE_DNA') || 'null');
+    const styleDNA = safeStorageGet('KS_STYLE_DNA', null);
+    const paletteDNA = safeStorageGet('KS_PALETTE_DNA', null);
 
     try {
       const response = await synthesizeRoom(selectedRoom, styleDNA, paletteDNA);

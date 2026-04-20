@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { analyzeLayout } from '../services/gemini';
 import { FileSearch, Upload, X, Loader2, CheckCircle2, AlertCircle, Sparkles, Layout } from 'lucide-react';
+import { safeStorageGet, safeStorageSet } from '../utils/storage';
 
 interface AuditResult {
   raw: string;
@@ -49,11 +50,11 @@ const SpatialAudit: React.FC = () => {
       setResult({ raw: analysis, sections });
       
       // Persist result to Sovereign Vault
-      const existingAudits = JSON.parse(localStorage.getItem('KS_SPATIAL_AUDITS') || '[]');
-      localStorage.setItem('KS_SPATIAL_AUDITS', JSON.stringify([
+      const existingAudits = safeStorageGet<any[]>('KS_SPATIAL_AUDITS', []);
+      safeStorageSet('KS_SPATIAL_AUDITS', [
         { date: new Date().toISOString(), analysis, image: selectedPlan },
         ...existingAudits
-      ]));
+      ]);
 
     } catch (err) {
       console.error(err);

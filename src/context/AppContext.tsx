@@ -1,6 +1,7 @@
 
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 import { Project, Material } from '../types';
+import { safeStorageGet, safeStorageSet } from '../utils/storage';
 
 interface AppContextType {
   isAdmin: boolean;
@@ -24,22 +25,20 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
 
   // Load from localStorage on mount
   useEffect(() => {
-    const savedProjects = JSON.parse(localStorage.getItem('KS_SAVED_PROJECTS') || '[]');
-    const savedMaterials = JSON.parse(localStorage.getItem('KS_SAVED_MATERIALS') || '[]');
-    setShortlistedProjects(savedProjects);
-    setShortlistedMaterials(savedMaterials);
+    setShortlistedProjects(safeStorageGet('KS_SAVED_PROJECTS', []));
+    setShortlistedMaterials(safeStorageGet('KS_SAVED_MATERIALS', []));
   }, []);
 
   // Update vault count whenever items change
   useEffect(() => {
-    const styleData = localStorage.getItem('KS_STYLE_DNA') ? 1 : 0;
-    const paletteData = localStorage.getItem('KS_PALETTE_DNA') ? 1 : 0;
-    const spatialData = JSON.parse(localStorage.getItem('KS_SPATIAL_AUDITS') || '[]').length;
+    const styleData = safeStorageGet('KS_STYLE_DNA', null) ? 1 : 0;
+    const paletteData = safeStorageGet('KS_PALETTE_DNA', null) ? 1 : 0;
+    const spatialData = safeStorageGet<any[]>('KS_SPATIAL_AUDITS', []).length;
     
     setVaultCount(shortlistedProjects.length + shortlistedMaterials.length + styleData + paletteData + spatialData);
     
-    localStorage.setItem('KS_SAVED_PROJECTS', JSON.stringify(shortlistedProjects));
-    localStorage.setItem('KS_SAVED_MATERIALS', JSON.stringify(shortlistedMaterials));
+    safeStorageSet('KS_SAVED_PROJECTS', shortlistedProjects);
+    safeStorageSet('KS_SAVED_MATERIALS', shortlistedMaterials);
   }, [shortlistedProjects, shortlistedMaterials]);
 
   const toggleProjectShortlist = (project: Project) => {

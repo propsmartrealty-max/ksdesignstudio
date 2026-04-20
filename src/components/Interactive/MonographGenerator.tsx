@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { generateMonograph } from '../../services/gemini';
 import { FileText, Lock, Send, Download, Phone, MapPin, Ruler, Home } from 'lucide-react';
+import { safeStorageGet, safeStorageSet } from '../../utils/storage';
 
 const MonographGenerator: React.FC = () => {
   const [step, setStep] = useState<1 | 2 | 3>(1);
@@ -32,9 +33,9 @@ const MonographGenerator: React.FC = () => {
     window.open(whatsappUrl, '_blank');
 
     // 2. Local Storage Vault Lead
-    const leads = JSON.parse(localStorage.getItem('ks_leads') || '[]');
+    const leads = safeStorageGet<any[]>('ks_leads', []);
     leads.push({ ...formData, date: new Date().toISOString(), source: 'Monograph Generator' });
-    localStorage.setItem('ks_leads', JSON.stringify(leads));
+    safeStorageSet('ks_leads', leads);
 
     // 3. Generate Monograph
     try {

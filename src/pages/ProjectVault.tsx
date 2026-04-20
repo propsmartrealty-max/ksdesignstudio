@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FolderHeart, Palette, Fingerprint, Layout, FileText, ArrowRight, Trash2, ShieldCheck, Download, ExternalLink, Heart, Box, Gem } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { safeStorageGet, safeStorageRemove } from '../utils/storage';
 
 interface VaultItem {
   id: string;
@@ -17,33 +18,41 @@ const ProjectVault: React.FC = () => {
   const [selectedType, setSelectedType] = useState<'all' | 'style' | 'palette' | 'spatial' | 'project' | 'material'>('all');
 
   useEffect(() => {
-    const styleData = localStorage.getItem('KS_STYLE_DNA');
-    const paletteData = localStorage.getItem('KS_PALETTE_DNA');
-    const spatialData = JSON.parse(localStorage.getItem('KS_SPATIAL_AUDITS') || '[]');
+    const styleDataString = localStorage.getItem('KS_STYLE_DNA');
+    const paletteDataString = localStorage.getItem('KS_PALETTE_DNA');
+    const spatialData = safeStorageGet<any[]>('KS_SPATIAL_AUDITS', []);
 
     const loadedItems: VaultItem[] = [];
 
     // 1. AI DNA Findings
-    if (styleData) {
-      const dna = JSON.parse(styleData);
-      loadedItems.push({
-        id: 'style-dna',
-        type: 'style',
-        title: dna.title,
-        date: 'Generated DNA',
-        data: dna
-      });
+    if (styleDataString) {
+      try {
+        const dna = JSON.parse(styleDataString);
+        loadedItems.push({
+          id: 'style-dna',
+          type: 'style',
+          title: dna.title,
+          date: 'Generated DNA',
+          data: dna
+        });
+      } catch (e) {
+        console.error("Corrupted Style DNA found.");
+      }
     }
 
-    if (paletteData) {
-      const pal = JSON.parse(paletteData);
-      loadedItems.push({
-        id: 'palette-dna',
-        type: 'palette',
-        title: pal.name,
-        date: 'Atmospheric Palette',
-        data: pal
-      });
+    if (paletteDataString) {
+      try {
+        const pal = JSON.parse(paletteDataString);
+        loadedItems.push({
+          id: 'palette-dna',
+          type: 'palette',
+          title: pal.name,
+          date: 'Atmospheric Palette',
+          data: pal
+        });
+      } catch (e) {
+        console.error("Corrupted Palette DNA found.");
+      }
     }
 
     spatialData.forEach((audit: any, idx: number) => {
