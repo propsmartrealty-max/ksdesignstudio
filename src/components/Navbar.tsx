@@ -83,10 +83,10 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
           </Link>
 
           {/* Floating Pill Navigation */}
-          <div className={`hidden lg:flex items-center transition-all duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] xl:px-8 lg:px-5 py-4 rounded-full border transition-luxury ${
+          <div className={`hidden lg:flex items-center transition-all duration-1000 xl:px-8 lg:px-5 py-4 rounded-full border border-white/40 glass-premium shadow-2xl ${
             scrolled 
-              ? 'bg-white/70 backdrop-blur-3xl shadow-[0_20px_40px_rgba(0,0,0,0.08)] border-white/50' 
-              : 'bg-white/10 border-white/20 backdrop-blur-xl shadow-lg'
+              ? 'opacity-100 translate-y-0 scale-100' 
+              : 'scale-[1.02] shadow-xl'
           }`}>
             <div className="flex items-center xl:space-x-8 lg:space-x-4">
               {navLinks.map((link) => (

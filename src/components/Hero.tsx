@@ -37,10 +37,10 @@ export default function Hero() {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-10 animate-fade-in" style={{ animationDelay: '0.7s' }}>
-          <Link to="/portfolio" className="group relative px-20 py-7 overflow-hidden glass-dark shadow-2xl rounded-2xl hover:bg-brass transition-all duration-700">
-            <span className="relative z-10 text-white uppercase tracking-[0.4em] text-[10px] font-black group-hover:text-white">View Our Projects</span>
+          <Link to="/portfolio" className="group relative px-20 py-7 overflow-hidden glass-dark shadow-2xl rounded-2xl hover:scale-105 transition-luxury">
+            <span className="relative z-10 text-white uppercase tracking-[0.4em] text-[10px] font-black group-hover:text-brass">View Our Projects</span>
           </Link>
-          <Link to="/contact" className="px-20 py-7 glass-premium text-zinc-900 rounded-2xl border-white/40 uppercase tracking-[0.4em] text-[10px] font-black hover:bg-white transition-all duration-700 shadow-xl">Book Free Consultation</Link>
+          <Link to="/contact" className="px-20 py-7 glass-premium text-zinc-900 rounded-2xl border-white/60 uppercase tracking-[0.4em] text-[10px] font-black glass-interactive shadow-xl">Book Free Consultation</Link>
         </div>
       </div>
       
@@ -55,7 +55,7 @@ export default function Hero() {
 
       <div className="absolute top-1/2 left-6 -translate-y-1/2 z-20 hidden xl:flex flex-col space-y-8">
          {['BANER', 'WAKAD', 'AUNDH', 'KHARADI', 'KOTHRUD'].map((loc) => (
-           <div key={loc} className="glass-premium px-2 py-6 rounded-full flex items-center justify-center shadow-xl border-white/30 backdrop-blur-xl">
+           <div key={loc} className="glass-surface px-2 py-6 rounded-full flex items-center justify-center shadow-xl border-white/30 backdrop-blur-2xl hover:scale-110 transition-luxury cursor-pointer">
              <span className="text-zinc-900 text-[8px] font-bold tracking-[0.4em] uppercase -rotate-90 origin-center whitespace-nowrap">{loc}</span>
            </div>
          ))}

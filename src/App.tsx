@@ -29,6 +29,7 @@ import ProjectVault from './pages/ProjectVault';
 import { AppProvider } from './context/AppContext';
 import { Mic } from 'lucide-react';
 import CommandPalette from './components/CommandPalette';
+import BackgroundAmbient from './components/BackgroundAmbient';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -71,7 +72,8 @@ const AppContent: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-white selection:bg-brass selection:text-white">
+    <div className="flex flex-col min-h-screen bg-transparent selection:bg-brass selection:text-white">
+      <BackgroundAmbient />
       <Schema />
       <SEOManager />
       <CinematicLab />

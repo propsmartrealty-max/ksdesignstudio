@@ -182,11 +182,15 @@
 }
 
 .glass-premium {
-  @apply bg-white/40 backdrop-blur-3xl border border-white/40 shadow-[0_20px_50px_rgba(0,0,0,0.1)] ring-1 ring-white/20;
+  @apply bg-white/40 backdrop-blur-[40px] border border-white/60 shadow-[0_20px_50px_rgba(0,0,0,0.05)] ring-1 ring-white/30;
 }
 
 .glass-surface {
-  @apply bg-white/30 backdrop-blur-[40px] border border-white/20 shadow-inner;
+  @apply bg-white/30 backdrop-blur-[50px] border border-white/10 shadow-inner;
+}
+
+.glass-interactive {
+  @apply bg-white/20 backdrop-blur-3xl border border-white/40 transition-luxury hover:bg-white/40 hover:shadow-[0_30px_60px_rgba(0,0,0,0.12)] hover:-translate-y-2;
 }
 
 .text-annotation {
