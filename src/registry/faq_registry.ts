@@ -49,5 +49,60 @@ export const PUNE_INTERIOR_FAQS: FAQ[] = [
     question: "Do you handle civil work like tile changes or wall demolitions?",
     answer: "Yes, as a turnkey firm, we manage the entire spectrum including civil work, structural changes, electrical rewiring, and false ceilings, ensuring a single-point responsibility for the homeowner.",
     category: 'process'
+  },
+  {
+    question: "What is the cost of a modular kitchen in Pune?",
+    answer: "A modular kitchen in Pune typically ranges from ₹2.5L for a basic L-shaped layout to ₹8L+ for a premium U-shaped kitchen with branded hardware (Hettich/Hafele), quartz countertops, and integrated appliances.",
+    category: 'pricing'
+  },
+  {
+    question: "How do I choose the best interior designer in Pune?",
+    answer: "Look for designers who provide a detailed BOQ (Bill of Quantities), offer transparent pricing, show you live ongoing sites (not just portfolios), and specialize in your property type. KS Design Studio provides all of these with a 10-year warranty on workmanship.",
+    category: 'process'
+  },
+  {
+    question: "Do you offer office interior design services in Hinjewadi?",
+    answer: "Yes, we specialize in productivity-focused workspace design for IT companies and startups in Hinjewadi, Kharadi, and Baner. Our commercial projects focus on ergonomic layouts, acoustic sculpting, and brand-aligned aesthetics.",
+    category: 'local'
+  },
+  {
+    question: "What interior design styles are popular in Pune homes?",
+    answer: "Pune's design DNA leans towards Warm Minimalism, Japandi-Deccan Fusion, and Contemporary Luxury. IT professionals in Hinjewadi/Wakad prefer sleek modern aesthetics, while established families in Koregaon Park and Kothrud often favor heritage-contemporary blends.",
+    category: 'trends'
+  },
+  {
+    question: "Can you design a 3BHK flat interior within ₹15 lakhs in Pune?",
+    answer: "Yes, a well-designed 3BHK interior is achievable within ₹15L using smart material choices. We offer curated 'Essential' packages that prioritize high-impact areas (kitchen, living room, master bedroom) while using cost-effective alternatives for secondary spaces.",
+    category: 'pricing'
+  },
+  {
+    question: "Do you provide sustainable or eco-friendly interior design?",
+    answer: "Absolutely. Our 'Green Monograph' protocol uses FSC-certified timber, low-VOC paints, recycled stone composites, and energy-efficient lighting systems. We source locally from Pune artisans to minimize the carbon footprint of material logistics.",
+    category: 'trends'
+  },
+  {
+    question: "What warranty do you provide on interior work?",
+    answer: "KS Design Studio provides a comprehensive 10-year warranty on modular structures and joinery, a 5-year warranty on hardware and fittings, and a 1-year warranty on painting and civil finishes. All warranty claims are handled within 48 hours.",
+    category: 'process'
+  },
+  {
+    question: "Do you serve areas like Hadapsar, NIBM, and Undri in Pune?",
+    answer: "Yes, we actively serve all major micro-markets in South and East Pune including Hadapsar, NIBM Road, Undri, Kondhwa, Magarpatta, and Wanowrie. Our teams have completed 50+ residential projects in these rapidly growing corridors.",
+    category: 'local'
+  },
+  {
+    question: "What is the difference between turnkey and modular interior services?",
+    answer: "Modular services focus on factory-made, precision-fitted furniture (kitchens, wardrobes, TV units). Turnkey covers the entire home—from civil work and electrical to furniture, painting, and final styling. We offer both as standalone services.",
+    category: 'process'
+  },
+  {
+    question: "How much does a luxury bungalow interior cost in Pune?",
+    answer: "Luxury bungalow interiors in Pune (3000-10000 sq ft) typically range from ₹35L to ₹1.5 Cr+, depending on the scope. This includes custom millwork, imported stones, designer lighting, landscape integration, and smart home automation.",
+    category: 'pricing'
+  },
+  {
+    question: "Can you redesign my existing home without full renovation?",
+    answer: "Yes, our 'Structural Refinement' service focuses on strategic visual upgrades—repainting, re-cladding walls, replacing hardware, upgrading lighting, and adding statement furniture—without major civil disruptions. Ideal for homes under 5 years old.",
+    category: 'process'
   }
 ];

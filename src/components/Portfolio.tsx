@@ -41,7 +41,7 @@ const Portfolio: React.FC = () => {
               <div className="aspect-[4/3] overflow-hidden">
                 <img 
                   src={project.imageUrl} 
-                  alt={project.alt || project.title}
+                  alt={`Best Interior Designer Pune | ${project.title} - ${project.category} Design in ${project.location}`}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-90 group-hover:opacity-100"
                 />
               </div>

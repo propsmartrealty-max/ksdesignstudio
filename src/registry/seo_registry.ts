@@ -70,7 +70,7 @@ export const SEO_PROPERTY_TYPES = [
   "penthouse interior Mumbai"
 ];
 
-export const SEO_SERVICES = [
+export const SEO_SERVICES_KEYWORDS = [
   "modular kitchen designer Pune",
   "wardrobe design Pune",
   "false ceiling designer Pune",
@@ -182,3 +182,52 @@ export const SEO_BLOG_CLUSTERS = [
   }
 ];
 
+export const SEO_SERVICES = [
+  {
+    id: 'modular-kitchen',
+    title: 'Modular Kitchen Designers in Pune',
+    keywords: ['modular kitchen pune cost', 'best kitchen designers pune', 'custom modular storage'],
+    description: 'Transform your culinary space with high-fidelity modular kitchen designs in Pune. Expert joinery and smart hardware integration.'
+  },
+  {
+    id: 'office-interior',
+    title: 'Commercial Office Interior Designers in Pune',
+    keywords: ['office interior designers in pune', 'corporate office design pune', 'it hub workspace design'],
+    description: 'Specialized commercial interior architects for high-performance offices in Hinjewadi, Kharadi, and Baner.'
+  },
+  {
+    id: 'turnkey-renovation',
+    title: 'Turnkey Home Renovation Services in Pune',
+    keywords: ['turnkey interior designer pune', 'full home renovation pune', 'home remodeling contractors'],
+    description: 'End-to-end interior renovation and reconstruction for residential properties. We manage civil, electrical, and aesthetic upgrades.'
+  },
+  {
+    id: 'luxury-residential',
+    title: 'Luxury Residential Interior Designers in Pune',
+    keywords: ['best interior designer in pune', 'luxury residential interior pune', '3BHK interior design cost pune'],
+    description: 'Crafting elite living spaces in Koregaon Park, Baner, and Sopan Baug. Superior material honesty and tectonic design.'
+  }
+];
+
+export const SEO_PAGE_METADATA: Record<string, { title: string; description: string }> = {
+  '/': {
+    title: 'KS Design Studio | Top Interior Designers in Pune | Modular & Turnkey',
+    description: 'Pune\'s premier interior architects specializing in premium residential and commercial spaces. Expert modular kitchen and turnkey renovation services.'
+  },
+  '/about': {
+    title: 'About KS Design Studio | Leading Interior Architects in Pune',
+    description: 'Meet the visionaries behind Pune\'s most tectonic interior scapes. Our Atelier approach to residential and luxury design excellence.'
+  },
+  '/services': {
+    title: 'Interior Design Services Pune | Modular, Commercial & Turnkey',
+    description: 'Explore our 4-pillar design service grid: Tectonic Modulars, Full-Scale Monographs, Quiet Luxury Estates, and Structural Refinement.'
+  },
+  '/portfolio': {
+    title: 'Interior Design Portfolio Pune | Luxury Project Monographs',
+    description: 'Examine our high-fidelity design executions across Pune\'s elite micro-markets like Baner, Wakad, and Magarpatta.'
+  },
+  '/contact': {
+    title: 'Contact KS Design Studio | Hire Top Interior Designers in Pune',
+    description: 'Initiate your spatial transformation. Visit our Vision One Mall studio or schedule a design consultation for your Pune property.'
+  }
+};

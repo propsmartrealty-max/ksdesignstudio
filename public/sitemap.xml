@@ -49,6 +49,26 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://ksdesignstudio.in/#/modular</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ksdesignstudio.in/#/turnkey</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ksdesignstudio.in/#/ateliers</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ksdesignstudio.in/#/renovations</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ksdesignstudio.in/#/partners</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://ksdesignstudio.in/#/interiors-in/baner</loc>
     <priority>0.8</priority>
   </url>

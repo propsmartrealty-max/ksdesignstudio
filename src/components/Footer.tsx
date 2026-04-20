@@ -119,6 +119,32 @@ const Footer: React.FC = () => {
            </div>
         </div>
 
+        {/* Pune Design Ecosystem: pSEO Hub */}
+        <div className="pt-20 border-t border-charcoal/5 mb-24">
+           <h4 className="text-[10px] uppercase tracking-[0.5em] font-black text-charcoal/30 mb-8">Pune Design Ecosystem</h4>
+           <div className="flex flex-wrap gap-x-12 gap-y-6">
+              {[
+                { label: 'Interiors in Baner', link: '/interiors-in/baner' },
+                { label: 'Wakad Interior Designers', link: '/interiors-in/wakad' },
+                { label: 'Furniture Hinjewadi', link: '/interiors-in/hinjewadi' },
+                { label: 'Luxury Aundh', link: '/interiors-in/aundh' },
+                { label: 'Modular Kitchen Pune', link: '/modular' },
+                { label: 'Renovation Specialists', link: '/renovations' },
+                { label: 'Office Interior Pune', link: '/services' },
+                { label: 'Bungalow Architects', link: '/ateliers' },
+                { label: 'Koregaon Park Luxury', link: '/interiors-in/koregaon-park' },
+                { label: 'Kothrud Design Hub', link: '/interiors-in/kothrud' },
+                { label: 'Viman Nagar Interiors', link: '/interiors-in/viman-nagar' },
+                { label: 'Kharadi IT Scapes', link: '/interiors-in/kharadi' },
+                { label: 'Magarpatta Home Design', link: '/interiors-in/magarpatta' }
+              ].map(item => (
+                <Link key={item.label} to={item.link} className="text-[9px] uppercase tracking-widest font-bold text-zinc-400 hover:text-brass transition-colors">
+                  {item.label}
+                </Link>
+              ))}
+           </div>
+        </div>
+
         {/* Global Bottom Bar */}
         <div className="pt-12 border-t border-charcoal/5 flex flex-col md:flex-row justify-between items-center gap-10">
           <div className="flex flex-col md:flex-row items-center gap-10">

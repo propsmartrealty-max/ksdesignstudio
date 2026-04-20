@@ -45,7 +45,12 @@ const staticRoutes = [
   '/vault',
   '/pricing',
   '/design-ideas',
-  '/tectonic-series'
+  '/tectonic-series',
+  '/modular',
+  '/turnkey',
+  '/ateliers',
+  '/renovations',
+  '/partners'
 ];
 
 const BLOGS = [

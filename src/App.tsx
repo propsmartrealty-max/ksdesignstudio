@@ -38,6 +38,9 @@ const ScrollToTop = () => {
   return null;
 };
 
+import SEOManager from './components/SEO/SEOManager';
+import Breadcrumbs from './components/SEO/Breadcrumbs';
+
 const AppContent: React.FC = () => {
   const [isWorkshopOpen, setIsWorkshopOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -70,8 +73,10 @@ const AppContent: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-white selection:bg-brass selection:text-white">
       <Schema />
+      <SEOManager />
       <CinematicLab />
       {!isAdminPage && <Navbar scrolled={scrolled} />}
+      {!isAdminPage && <Breadcrumbs />}
       
       <main className="flex-grow">
         <Routes>

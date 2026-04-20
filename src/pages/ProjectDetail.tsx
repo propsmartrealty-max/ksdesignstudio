@@ -24,7 +24,7 @@ const ProjectDetail: React.FC = () => {
           animate={{ scale: 1 }}
           transition={{ duration: 2, ease: "easeOut" }}
           src={project.imageUrl} 
-          alt={project.title} 
+          alt={`KS Design Studio Pune | ${project.title} - Premium ${project.category} Interior Design in ${project.location}`} 
           className="w-full h-full object-cover opacity-60"
         />
         
