@@ -31,8 +31,9 @@ const Footer: React.FC = () => {
           
           {/* Brand & Mission */}
           <div className="lg:col-span-2">
-            <h3 className="text-3xl font-black mb-8 tracking-tighter">
-              KS <span className="text-brass italic">STUDIO.</span>
+            <h3 className="text-3xl font-black mb-8 tracking-tighter flex flex-col border-l-[3px] border-brass pl-5">
+              <span>KS <span className="text-brass">DESIGN</span></span>
+              <span className="text-[10px] tracking-[0.7em] uppercase font-bold text-zinc-400 mt-1">STUDIO</span>
             </h3>
             <p className="text-zinc-600 text-base leading-relaxed mb-10 font-medium max-w-sm">
               The premier destination for luxury interior design across <span className="text-charcoal font-bold">Pune, Mumbai, Indore, and Goa</span>. Designing beautiful sanctuaries for elite residential patrons.

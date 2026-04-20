@@ -64,7 +64,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
 
       {/* Layer 2: Primary Branding & Action Bar */}
       <div className={`w-full py-6 lg:py-8 transition-all duration-700 ${scrolled ? 'pt-4' : ''}`}>
-        <div className="max-w-[1440px] mx-auto flex justify-between items-center px-6 lg:px-12 pointer-events-auto">
+        <div className="max-w-[1440px] mx-auto flex justify-between gap-12 items-center px-6 lg:px-12 pointer-events-auto">
           {/* Brand Identity */}
           <Link to="/" className="flex items-center group relative whitespace-nowrap shrink-0">
             <div className={`flex flex-col border-l-[3px] border-brass pl-5 transition-all duration-500 group-hover:pl-7 ${scrolled ? 'drop-shadow-sm' : 'drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]'}`}>
