@@ -111,3 +111,22 @@ export async function getDesignAdviceWithGrounding(prompt: string, location?: an
     groundingChunks: [] // Grounding logic to be restored in Phase 4
   };
 }
+
+/**
+ * Programmatic SEO Engine: Algorithmic Location Content Generation
+ * Generates unique design narratives for Pune micro-markets
+ */
+export async function generateLocationBrief(location: string): Promise<string> {
+  const prompt = `
+    Generate a high-fidelity architectural design brief for a premium interior design studio operating in the micro-market of: ${location}, Pune.
+    
+    The brief must:
+    1. Analyze the specific real-estate profile of ${location} (e.g., IT hub, heritage zone, luxury high-rise, or upcoming residential pocket).
+    2. Suggest a "Style DNA" that fits the demographic of ${location}.
+    3. Call out specific materials (e.g., Statuario marble, basalt, oak) that resonate with this locale.
+    4. Maintain a professional, minimalist, and visionary tone.
+    5. Be exactly 3 short paragraphs.
+  `;
+
+  return executeTectonicAI(prompt);
+}

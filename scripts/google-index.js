@@ -30,13 +30,19 @@ async function initiateIndexing() {
   const authClient = await auth.getClient();
   google.options({ auth: authClient });
   const locations = [
-    "baner", "balewadi", "aundh", "wakad", "hinjewadi", "pashan", "bavdhan", "kothrud", "warje", "sus",
-    "shivajinagar", "deccan", "model-colony", "sadashiv-peth", "erandwane",
-    "kharadi", "viman-nagar", "wagholi", "magarpatta", "hadapsar", "mundhwa", "keshav-nagar",
-    "kondhwa", "nibm-road", "undri", "pisoli", "bibwewadi",
-    "pimpri", "chinchwad", "akurdi", "nigdi", "ravet", "tathawade",
-    "bandra-west", "juhu", "powai", "worli", "lower-parel", "khar-west", "andheri-west", "goregaon", "malad-west", "borivali-west",
-    "vijay-nagar", "palasia", "panjim", "assagao"
+    ...[
+      "Baner", "Balewadi", "Aundh", "Wakad", "Hinjewadi", "Pashan", "Bavdhan", "Kothrud", "Warje", "Sus",
+      "Mahalunge", "Pirangut", "Mulshi", "Balewadi High Street", "Punawale", "Mamurdi", "Kivale", "Tathawade", "Ravet",
+      "Bhukum", "Bhugaon", "Lifeline", "Chandni Chowk", "Ghunje", "Somatne",
+      "Shivajinagar", "Deccan", "Model Colony", "Prabhat Road", "Erandwane", "Karve Nagar", "F.C. Road", "J.M. Road",
+      "Sadashiv Peth", "Narayan Peth", "Shaniwar Peth", "Kasba Peth", "Swargate", "Mukund Nagar", "Gultekdi",
+      "Kharadi", "Viman Nagar", "Wagholi", "Magarpatta", "Hadapsar", "Mundhwa", "Keshav Nagar", "Kalyani Nagar",
+      "Koregaon Park", "Sopan Baug", "Amanora", "Fursungi", "Loni Kalbhor", "Uruli Kanchan", "Manjari", "Tukaram Nagar",
+      "Kondhwa", "NIBM Road", "Undri", "Pisoli", "Bibwewadi", "Sahakar Nagar", "Dhankawadi", "Katraj", "Ambegaon",
+      "Satara Road", "Market Yard", "Lulla Nagar", "Wanowrie", "Salunke Vihar",
+      "Pimpri", "Chinchwad", "Akurdi", "Nigdi", "Ravet", "Moshi", "Bhosari", "Chakan", "Alandi", "Dighi", "Charholi",
+      "Talawade", "Sangvi", "Dapodi", "Khadki", "Vishrantwadi"
+    ].map(l => l.toLowerCase().replace(/\s+/g, '-'))
   ];
 
   const projectSlugs = [
@@ -45,15 +51,17 @@ async function initiateIndexing() {
     "kumar-megapolis", "anp-landmarks", "kohinoor-sapphire", "kekarav-bungalows"
   ];
 
+  const BASE_URL = 'https://ksdesignstudio.in';
+
   const urlsToIndex = [
-    'https://ksdesignstudio.in/',
-    'https://ksdesignstudio.in/#/portfolio',
-    'https://ksdesignstudio.in/#/laboratory',
-    'https://ksdesignstudio.in/#/knowledge',
-    'https://ksdesignstudio.in/#/contact',
-    ...locations.map(loc => `https://ksdesignstudio.in/#/interiors-in/${loc}`),
-    ...locations.map(loc => `https://ksdesignstudio.in/#/luxury-design/${loc}`),
-    ...projectSlugs.map(slug => `https://ksdesignstudio.in/#/interiors-at/${slug}`)
+    `${BASE_URL}/`,
+    `${BASE_URL}/#/portfolio`,
+    `${BASE_URL}/#/laboratory`,
+    `${BASE_URL}/#/knowledge`,
+    `${BASE_URL}/#/contact`,
+    ...locations.map(loc => `${BASE_URL}/#/interiors-in/${loc}`),
+    ...locations.map(loc => `${BASE_URL}/#/luxury-design/${loc}`),
+    ...projectSlugs.map(slug => `${BASE_URL}/#/interiors-at/${slug}`)
   ];
 
   console.log(`Initiating Google Indexing for ${urlsToIndex.length} high-fidelity routes...`);

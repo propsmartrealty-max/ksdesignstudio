@@ -20,14 +20,30 @@ export const SEO_CORE_KEYWORDS = [
 ];
 
 export const SEO_LOCATIONS = {
-  west: ["Baner", "Balewadi", "Aundh", "Wakad", "Hinjewadi", "Pashan", "Bavdhan", "Kothrud", "Warje", "Sus"],
-  central: ["Shivajinagar", "Deccan", "Model Colony", "Sadashiv Peth", "Erandwane"],
-  east: ["Kharadi", "Viman Nagar", "Wagholi", "Magarpatta", "Hadapsar", "Mundhwa", "Keshav Nagar"],
-  south: ["Kondhwa", "NIBM Road", "Undri", "Pisoli", "Bibwewadi"],
-  north: ["Pimpri", "Chinchwad", "Akurdi", "Nigdi", "Ravet", "Tathawade"],
-  mumbai: ["Bandra West", "Juhu", "Powai", "Worli", "Lower Parel", "Khar West", "Andheri West", "Goregaon", "Malad West", "Borivali West"],
-  goa: ["Panjim", "Assagao", "Baga", "Calangute", "Candolim", "Anjuna", "Porvorim"],
-  indore: ["Vijay Nagar", "Palasia", "Mahalaxmi Nagar", "Bicholi Mardana", "Rajendra Nagar"]
+  west: [
+    "Baner", "Balewadi", "Aundh", "Wakad", "Hinjewadi", "Pashan", "Bavdhan", "Kothrud", "Warje", "Sus",
+    "Mahalunge", "Pirangut", "Mulshi", "Balewadi High Street", "Punawale", "Mamurdi", "Kivale", "Tathawade", "Ravet",
+    "Bhukum", "Bhugaon", "Lifeline", "Chandni Chowk", "Ghunje", "Somatne"
+  ],
+  central: [
+    "Shivajinagar", "Deccan", "Model Colony", "Prabhat Road", "Erandwane", "Karve Nagar", "F.C. Road", "J.M. Road",
+    "Sadashiv Peth", "Narayan Peth", "Shaniwar Peth", "Kasba Peth", "Swargate", "Mukund Nagar", "Gultekdi"
+  ],
+  east: [
+    "Kharadi", "Viman Nagar", "Wagholi", "Magarpatta", "Hadapsar", "Mundhwa", "Keshav Nagar", "Kalyani Nagar",
+    "Koregaon Park", "Sopan Baug", "Amanora", "Fursungi", "Loni Kalbhor", "Uruli Kanchan", "Manjari", "Tukaram Nagar"
+  ],
+  south: [
+    "Kondhwa", "NIBM Road", "Undri", "Pisoli", "Bibwewadi", "Sahakar Nagar", "Dhankawadi", "Katraj", "Ambegaon",
+    "Satara Road", "Market Yard", "Lulla Nagar", "Wanowrie", "Salunke Vihar"
+  ],
+  north: [
+    "Pimpri", "Chinchwad", "Akurdi", "Nigdi", "Ravet", "Moshi", "Bhosari", "Chakan", "Alandi", "Dighi", "Charholi",
+    "Talawade", "Sangvi", "Dapodi", "Khadki", "Vishrantwadi"
+  ],
+  mumbai: ["Bandra West", "Juhu", "Powai", "Worli", "Lower Parel", "Khar West", "Andheri West", "Goregaon", "Malad West", "Borivali West", "Byculla", "Colaba", "Marine Drive", "Wadala", "Chembur"],
+  goa: ["Panjim", "Assagao", "Baga", "Calangute", "Candolim", "Anjuna", "Porvorim", "Bambolim", "Dona Paula", "Vagator"],
+  indore: ["Vijay Nagar", "Palasia", "Mahalaxmi Nagar", "Bicholi Mardana", "Rajendra Nagar", "Rau", "Kanadia Road", "Saket", "Annapurna"]
 };
 
 export const PUNE_NEIGHBORHOOD_USPS: Record<string, string> = {
