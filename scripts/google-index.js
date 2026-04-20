@@ -53,7 +53,9 @@ async function initiateIndexing() {
 
   const blogSlugs = [
     "pune-luxury-hub", "mumbai-minimalism", "wakad-design-evolution", "bandra-bohemian",
-    "ravet-punawale-trends", "pune-interior-cost-guide-2026", "material-intelligence-guide", "small-home-interior-pune"
+    "ravet-punawale-trends", "pune-interior-cost-guide-2026", "material-intelligence-guide", "small-home-interior-pune",
+    "luxury-bungalow-transformation-pune", "smart-kitchen-technology-2026", "vastu-modern-interior-flow",
+    "pune-commercial-office-roi", "luxury-lighting-architecture-guide", "sustainable-interior-design-pune"
   ];
 
   const BASE_URL = 'https://ksdesignstudio.in';

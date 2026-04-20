@@ -56,7 +56,13 @@ const BLOGS = [
   { id: 'ravet-punawale-trends' },
   { id: 'pune-interior-cost-guide-2026' },
   { id: 'material-intelligence-guide' },
-  { id: 'small-home-interior-pune' }
+  { id: 'small-home-interior-pune' },
+  { id: 'luxury-bungalow-transformation-pune' },
+  { id: 'smart-kitchen-technology-2026' },
+  { id: 'vastu-modern-interior-flow' },
+  { id: 'pune-commercial-office-roi' },
+  { id: 'luxury-lighting-architecture-guide' },
+  { id: 'sustainable-interior-design-pune' }
 ];
 
 function generateSitemap() {

@@ -291,6 +291,39 @@ export const BLOGS: Blog[] = [
     alt: 'KS Design Studio Pune | Small Flat Interior Ideas Pune'
   },
   {
+    id: 'luxury-bungalow-transformation-pune',
+    title: 'Massive Bungalow Transformations: A Legacy Restoration Guide',
+    excerpt: 'Revitalizing grand estates in Koregaon Park and Prabhat Road with modern architectural vigor.',
+    date: 'April 21, 2024',
+    category: 'Bungalow Design',
+    author: 'KS Design Studio AI',
+    imageUrl: blogPuneLuxury,
+    isVirtual: true,
+    alt: 'KS Design Studio Pune | Luxury Bungalow Interior Design Pune'
+  },
+  {
+    id: 'smart-kitchen-technology-2026',
+    title: 'Smart Kitchen Tech 2026: The Intersection of Gastronomy & Automation',
+    excerpt: 'A deep-dive into the specialized modular systems and IoT integration for the modern Pune kitchen.',
+    date: 'April 22, 2024',
+    category: 'Modular Tech',
+    author: 'KS Design Studio AI',
+    imageUrl: blogWakadTech,
+    isVirtual: true,
+    alt: 'KS Design Studio Pune | Smart Modular Kitchen Pune 2026'
+  },
+  {
+    id: 'vastu-modern-interior-flow',
+    title: 'Vastu & Modern Flow: Synchronizing Energetic Logic with Space',
+    excerpt: 'How we implement traditional Vastu principles without compromising on minimalist architectural aesthetics.',
+    date: 'April 23, 2024',
+    category: 'Process',
+    author: 'KS Design Studio AI',
+    imageUrl: blogBandraBohemian,
+    isVirtual: true,
+    alt: 'KS Design Studio Pune | Vastu Compliant Interior Design'
+  },
+  {
     id: 'lighting-architecture-2024',
     title: 'Lighting Architecture: The Silent Sculptor of Volume',
     excerpt: 'A technical guide to lux levels and color temperatures for premium residences.',

@@ -16,22 +16,23 @@ const BlogDetail: React.FC = () => {
         setIsGenerating(true);
         try {
           const prompt = `
-            Write a high-fidelity, professional architectural blog post for the topic: "${blog.title}".
+            Act as the Principal Architect of KS Design Studio. 
+            Write a high-fidelity, professional architectural blog post titled: "${blog.title}".
             
-            Context:
-            - Excerpt: ${blog.excerpt}
-            - Category: ${blog.category}
-            - Target Market: Pune Interior Design
-            
-            Requirements:
-            1. Use a visionary, minimalistic, and expert tone.
-            2. Structure the content with 4-5 deep-dive paragraphs.
-            3. Include specific material callouts (e.g. Statuario marble, charcoal oak, Venetian plaster).
-            4. Focus on 'Spatial Flow' and 'Material Honesty'.
-            5. Avoid generic advice; provide "Atelier-level" design intelligence.
+            Style DNA & Branding:
+            - Tone: Visionary, Minimalistic, Expert, and Tectonic.
+            - Terminology: Use terms like 'Deccan Tectonics', 'Spatial Flow', 'Material Honesty', 'Monograph', and 'Cinematic Volumes'.
+            - Local Context: Specifically mention Pune's micro-markets (Baner, Koregaon Park, Wakad) and its unique real-estate profile.
+            - Ateliers: Refer to the "KS Atelier" philosophy of rigorous spatial auditing.
+
+            Content Requirements:
+            1. 4-5 Deep-dive paragraphs with technical precision.
+            2. Material Callouts: Mention exotic materials (e.g., Italian Statuario, Walnut Veneers, Oxidized Metal, Basalt Stone).
+            3. Conversion Focus: Subtly emphasize why a professional "Atelier-level" design is superior to generic interiors.
+            4. SEO Focus: Naturally integrate keywords related to ${blog.category} in Pune.
           `;
           const content = await executeTectonicAI(prompt);
-          setAiContent(content.replace(/\*\*(.*?)\*\*/g, '<strong class="text-charcoal">$1</strong>'));
+          setAiContent(content.replace(/\*\*(.*?)\*\*/g, '<strong class="text-brass">$1</strong>'));
         } catch (error) {
           console.error("AI Blog Generation Error:", error);
         } finally {

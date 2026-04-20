@@ -149,6 +149,36 @@ export const SEO_BLOG_CLUSTERS = [
     topic: "Area Specific: Kharadi",
     keywords: ["interior designer in Kharadi Pune", "IT hub home design", "Kharadi real estate trends"],
     slug: "kharadi-interior-design-guide"
+  },
+  {
+    topic: "Bungalow Transformations",
+    keywords: ["luxury bungalow interior Pune", "viva design Pune", "independent house renovation"],
+    slug: "luxury-bungalow-transformation-pune"
+  },
+  {
+    topic: "Vastu & Modern Flow",
+    keywords: ["vastu compliant interior design", "east facing home interior", "modern vastu tips"],
+    slug: "vastu-modern-interior-flow"
+  },
+  {
+    topic: "Commercial Office ROI",
+    keywords: ["office interior designer Pune", "corporate workspace design", "productivity focused office"],
+    slug: "pune-commercial-office-roi"
+  },
+  {
+    topic: "Kitchen Tech 2026",
+    keywords: ["smart modular kitchen Pune", "hafele vs hettich kitchen", "automated kitchen solutions"],
+    slug: "smart-kitchen-technology-2026"
+  },
+  {
+    topic: "Luxury Lighting Systems",
+    keywords: ["layered lighting design", "smart home lighting Pune", "accent lighting for villas"],
+    slug: "luxury-lighting-architecture-guide"
+  },
+  {
+    topic: "Sustainable Interior Scapes",
+    keywords: ["eco friendly interior Pune", "sustainable materials architecture", "green home design"],
+    slug: "sustainable-interior-design-pune"
   }
 ];
 
