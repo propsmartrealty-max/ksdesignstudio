@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { MATERIAL_TAXONOMY } from '../constants';
-import { Gem, Box, Layers, MapPin, Zap } from 'lucide-react';
+import { Gem, Box, Layers, MapPin, Zap, Heart } from 'lucide-react';
+import { useApp } from '../context/AppContext';
+import { Material } from '../types';
 
-const MaterialCard: React.FC<{ material: any }> = ({ material }) => {
+const MaterialCard: React.FC<{ material: Material }> = ({ material }) => {
   const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
   const [isHovering, setIsHovering] = useState(false);
+  const { toggleMaterialShortlist, isMaterialShortlisted } = useApp();
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -12,6 +15,8 @@ const MaterialCard: React.FC<{ material: any }> = ({ material }) => {
     const y = ((e.clientY - rect.top) / rect.height) * 100;
     setMousePos({ x, y });
   };
+
+  const isShortlisted = isMaterialShortlisted(material.name);
 
   return (
     <div 
@@ -26,10 +31,23 @@ const MaterialCard: React.FC<{ material: any }> = ({ material }) => {
       }}
     >
       <div className="flex justify-between items-start mb-4 relative z-10 transition-transform duration-700">
-        <h4 className="text-xl font-bold text-[#1A1A1A] leading-tight">{material.name}</h4>
-        {material.origin && (
-          <span className="text-[8px] uppercase tracking-widest font-black text-zinc-400 border border-zinc-200 px-2 py-1 rounded-full">{material.origin}</span>
-        )}
+        <div className="flex-grow pr-8">
+          <h4 className="text-xl font-bold text-[#1A1A1A] leading-tight mb-2">{material.name}</h4>
+          {material.origin && (
+            <span className="text-[8px] uppercase tracking-widest font-black text-zinc-400 border border-zinc-200 px-2 py-1 rounded-full">{material.origin}</span>
+          )}
+        </div>
+        <button 
+          onClick={(e) => {
+            e.stopPropagation();
+            toggleMaterialShortlist(material);
+          }}
+          className={`shrink-0 p-2 rounded-full transition-all duration-500 ${
+            isShortlisted ? 'bg-brass text-white' : 'bg-zinc-100 text-zinc-300 hover:text-brass'
+          }`}
+        >
+          <Heart size={14} fill={isShortlisted ? "currentColor" : "none"} />
+        </button>
       </div>
       <p className="text-zinc-500 text-xs leading-relaxed font-bold mb-6 italic relative z-10">
         {material.description}

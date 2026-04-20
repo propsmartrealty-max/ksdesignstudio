@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Instagram, Mail, MapPin, Search, FolderHeart } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useApp } from '../context/AppContext';
 
 interface NavbarProps {
   scrolled: boolean;
@@ -9,6 +10,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { vaultCount } = useApp();
 
   const navLinks = [
     { name: 'About Us', href: '/about' },
@@ -118,11 +120,16 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
               {/* Vault Trigger */}
               <Link
                 to="/vault"
-                className={`ml-6 p-3 rounded-full transition-all duration-500 flex items-center space-x-3 group ${
+                className={`ml-6 p-3 rounded-full transition-all duration-500 flex items-center space-x-3 group relative ${
                   scrolled ? 'text-zinc-400 hover:text-brass' : 'text-white/40 hover:text-white'
                 }`}
               >
                 <FolderHeart size={18} className="group-hover:scale-110 transition-transform" />
+                {vaultCount > 0 && (
+                  <span className="absolute top-1 right-1 w-4 h-4 bg-brass text-white text-[8px] flex items-center justify-center rounded-full font-black animate-in fade-in zoom-in duration-500">
+                    {vaultCount}
+                  </span>
+                )}
               </Link>
 
               {/* Search Trigger */}
@@ -172,12 +179,17 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
               key={link.name}
               to={link.href}
               onClick={() => setIsOpen(false)}
-              className={`block text-3xl  transition-all duration-700 hover:tracking-[0.1em] ${
+              className={`block text-3xl  transition-all duration-700 hover:tracking-[0.1em] relative ${
                 isActive(link.href) ? 'text-brass italic' : 'text-white hover:text-brass'
               }`}
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               {link.name}
+              {link.href === '/vault' && vaultCount > 0 && (
+                <span className="ml-4 inline-flex items-center justify-center w-6 h-6 bg-brass text-white text-xs rounded-full font-black not-italic">
+                  {vaultCount}
+                </span>
+              )}
             </Link>
           ))}
 

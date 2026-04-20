@@ -67,3 +67,11 @@ export interface SignatureModule {
   imageUrl: string;
 }
 
+export interface Material {
+  name: string;
+  origin?: string;
+  description: string;
+  property?: string;
+  partners?: string[];
+  imageUrl?: string;
+}

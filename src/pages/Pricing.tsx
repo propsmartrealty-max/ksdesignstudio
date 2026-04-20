@@ -1,5 +1,6 @@
 import React from 'react';
 import InvestmentEstimator from '../components/InvestmentEstimator';
+import CommercialROI from '../components/Calculators/CommercialROI';
 import { Ruler, Shield, Layers, Package, ArrowRight } from 'lucide-react';
 
 const Pricing: React.FC = () => {
@@ -50,6 +51,10 @@ const Pricing: React.FC = () => {
              </div>
           </div>
         </div>
+
+        <section className="mb-24">
+           <CommercialROI />
+        </section>
 
         <section className="mb-40">
            <InvestmentEstimator />

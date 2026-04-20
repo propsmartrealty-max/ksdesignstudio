@@ -130,3 +130,37 @@ export async function generateLocationBrief(location: string): Promise<string> {
 
   return executeTectonicAI(prompt);
 }
+
+export async function generateMonograph(data: { area: string, type: string, style: string, location: string, name: string }): Promise<string> {
+  const prompt = `
+    Generate a highly professional, 4-section "Architectural Monograph" (Design Proposal) for a patron.
+    
+    CLIENT CONTEXT:
+    Name: ${data.name}
+    Property Type: ${data.type}
+    Area: ${data.area} Sq Ft
+    Location: ${data.location}, Pune
+    Style DNA: ${data.style}
+    
+    REQUIREMENTS:
+    Use markdown format. Write as the Principal Architect of KS Design Studio. Use Atelier Genesis terminology (Tectonics, Spatial Flow, Material Honesty). Focus on luxury.
+    
+    Structure:
+    # Architectural Monograph: Project ${data.name}
+    
+    ## 1. Spatial DNA Analysis
+    (Analyze how the ${data.style} style applies specifically to a ${data.type} of ${data.area} sqft in ${data.location}.)
+    
+    ## 2. Material Logic
+    (List 4 premium materials suited for this property and style. Detail why they are chosen.)
+    
+    ## 3. Atmospheric Flow
+    (Describe the lighting strategy and spatial transitions.)
+    
+    ## 4. Execution Protocol
+    (Provide an estimated timeline and the immediate next steps to "Lock this vision in the Sovereign Vault".)
+  `;
+
+  const response = await executeTectonicAI(prompt);
+  return response;
+}

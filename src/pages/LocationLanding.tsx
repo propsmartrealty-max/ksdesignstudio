@@ -4,6 +4,7 @@ import { SEO_LOCATIONS, SEO_LONG_TAIL, SEO_PROPERTY_TYPES, PUNE_NEIGHBORHOOD_USP
 import { MapPin, CheckCircle, ArrowRight, Star, Map as MapIcon, BrainCircuit, ShieldCheck, Sparkles } from 'lucide-react';
 import { generateLocationBrief } from '../services/gemini';
 import FAQSection from '../components/SEO/FAQSection';
+import MonographGenerator from '../components/Interactive/MonographGenerator';
 
 const LocationLanding: React.FC = () => {
   const { location } = useParams<{ location: string }>();
@@ -227,17 +228,8 @@ const LocationLanding: React.FC = () => {
               ))}
            </div>
 
-           <div className="mt-24 p-12 lg:p-16 glass-premium rounded-[3.5rem] border-zinc-200/40 relative overflow-hidden">
-              <div className="absolute inset-0 architect-grid opacity-[0.03]" />
-              <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
-                 <div>
-                    <h3 className="text-3xl font-black tracking-tight text-zinc-900 mb-4">Start your {formattedLocation} journey.</h3>
-                    <p className="text-zinc-500 text-sm font-medium tracking-wide">Lock your style preference in the Sovereign Vault to unlock prime design intelligence.</p>
-                 </div>
-                 <Link to="/vault" className="whitespace-nowrap px-16 py-7 bg-zinc-900 text-white rounded-2xl text-[10px] uppercase font-black tracking-[0.5em] hover:bg-brass transition-all shadow-xl">
-                    Enter Vault
-                 </Link>
-              </div>
+           <div className="mt-24 relative z-20">
+              <MonographGenerator />
            </div>
         </div>
 
