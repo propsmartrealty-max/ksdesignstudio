@@ -46,6 +46,7 @@ export interface Blog {
   author: string;
   imageUrl: string;
   alt: string;
+  isVirtual?: boolean;
 }
 
 export interface Guideline {
