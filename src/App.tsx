@@ -133,6 +133,7 @@ const AppContent: React.FC = () => {
       )}
     </div>
   );
+};
 
 const App: React.FC = () => {
   const isGitHubPages = window.location.hostname.includes('github.io');
