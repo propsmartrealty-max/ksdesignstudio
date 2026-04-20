@@ -1,14 +1,19 @@
 import { GoogleGenAI } from "@google/genai";
 
-const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-const genAI = new GoogleGenAI({ apiKey: API_KEY });
+// Initialize client lazily or with a safe check to prevent boot crashes if API_KEY is missing
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || "";
+const genAI = API_KEY ? new GoogleGenAI(API_KEY) : null;
 
 export async function executeTectonicAI(
   prompt: string,
   imageData?: string,
   systemInstruction?: string
 ) {
-  const modelName = imageData ? 'gemini-2.0-flash' : 'gemini-2.0-flash'; // Optimized for speed/fidelity mix
+  if (!genAI) {
+    console.error("KS Design AI Error: VITE_GEMINI_API_KEY is not configured.");
+    throw new Error("AI services are currently unavailable. Please check your configuration.");
+  }
+  const modelName = imageData ? 'gemini-2.0-flash' : 'gemini-2.0-flash';
 
   try {
     const parts: any[] = [{ text: prompt }];

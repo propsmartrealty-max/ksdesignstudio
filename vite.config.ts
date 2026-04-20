@@ -12,8 +12,8 @@ export default defineConfig(({ mode }) => ({
     }
   },
   plugins: [react()],
-  // Use root base for dev to prevent navigation hangs, but relative for production
-  base: mode === 'production' ? './' : '/',
+  // Use root base for all environments to ensure compatibility with clean URLs/SPAs
+  base: '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
