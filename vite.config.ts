@@ -12,8 +12,8 @@ export default defineConfig(({ mode }) => ({
     }
   },
   plugins: [react()],
-  // Use root base for all environments to ensure compatibility with clean URLs/SPAs
-  base: '/',
+  // Support root base for Vercel and subdirectory base for GitHub Pages
+  base: process.env.GITHUB_PAGES === 'true' ? '/ksdesignstudio/' : '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',

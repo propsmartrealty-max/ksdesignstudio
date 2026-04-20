@@ -8,8 +8,15 @@ const NeighborhoodIntel: React.FC = () => {
 
   const fetchNeighborhoodData = async (coords?: GeolocationCoordinates) => {
     setIsLoading(true);
+    const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+    if (!apiKey) {
+      console.warn("KS Design Portfolio: Neighborhood Intel disabled due to missing API key.");
+      setIsLoading(false);
+      return;
+    }
+
     try {
-      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
+      const ai = new GoogleGenAI(apiKey);
       // Default to Baner/Balewadi, Pune coordinates if geolocation fails
       const lat = coords?.latitude || 18.5597;
       const lng = coords?.longitude || 73.7799;

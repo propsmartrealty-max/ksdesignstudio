@@ -137,9 +137,14 @@ const AppContent: React.FC = () => {
 };
 
 const App: React.FC = () => {
+  // Support both Vercel (root) and GitHub Pages (subdirectory)
+  const basename = window.location.hostname.includes('github.io') 
+    ? '/ksdesignstudio' 
+    : '/';
+
   return (
     <AppProvider>
-      <Router>
+      <Router basename={basename}>
         <ScrollToTop />
         <AppContent />
       </Router>
