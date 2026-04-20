@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Send, CheckCircle2, Loader2 } from 'lucide-react';
+import { safeStorageGet, safeStorageSet } from '../utils/storage';
 
 const Contact: React.FC = () => {
   const contactPhone = "917020377693";
@@ -10,7 +11,8 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    projectType: 'Residential Interior',
+    phone: '',
+    projectType: 'Residential',
     message: ''
   });
 
@@ -20,9 +22,22 @@ const Contact: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
+
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    // Store in local storage as a fallback lead
+    const leads = safeStorageGet<any[]>('ks_leads', []);
+    leads.push({
+      ...formData,
+      id: Date.now(),
+      timestamp: new Date().toLocaleString(),
+      status: 'Unread'
+    });
+    safeStorageSet('ks_leads', leads);
 
     const formattedMessage = `*NEW DESIGN ENQUIRY* %0A%0A*Name:* ${formData.name}%0A*Email:* ${formData.email}%0A*Project:* ${formData.projectType}%0A*Message:* ${formData.message}`;
     
