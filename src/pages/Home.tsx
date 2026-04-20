@@ -21,7 +21,7 @@ export default function Home() {
       <Hero />
       
       {/* Social Proof: Elite Registers */}
-      <div id="social-proof" className="relative z-10 -mt-20">
+      <div id="social-proof" className="relative z-10">
         <EliteCustomers />
       </div>
 

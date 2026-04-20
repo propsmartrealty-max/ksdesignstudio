@@ -72,7 +72,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                 KS <span className="text-brass drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]">DESIGN</span>
               </span>
               <div className="flex items-center space-x-2 mt-1.5">
-                <span className={`text-[10px] tracking-[0.9em] uppercase font-bold transition-all duration-700 ${scrolled ? 'text-zinc-500' : 'text-zinc-200'}`}>
+                <span className={`text-[9px] tracking-[0.7em] uppercase font-bold transition-all duration-700 ${scrolled ? 'text-zinc-500' : 'text-zinc-200'}`}>
                   STUDIO
                 </span>
                 <span className="w-1.5 h-1.5 bg-brass rounded-full animate-pulse shadow-[0_0_10px_#D4AF37]" />
@@ -91,7 +91,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className={`text-[13px] uppercase xl:tracking-[0.15em] lg:tracking-[0.05em] font-black transition-all duration-500 relative group/link py-1 whitespace-nowrap ${
+                  className={`text-[14px] uppercase xl:tracking-[0.1em] lg:tracking-normal font-black transition-all duration-500 relative group/link py-1 whitespace-nowrap ${
                     isActive(link.href) 
                       ? 'text-brass drop-shadow-[0_0_10px_rgba(212,175,55,0.3)] font-black' 
                       : (scrolled ? 'text-brass/90 hover:text-[#1A1A1A]' : 'text-brass hover:text-white')
@@ -108,7 +108,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
             }`}>
               <Link 
                 to="/contact" 
-                className={`text-[13px] uppercase tracking-[0.15em] font-black transition-all duration-500 xl:px-8 lg:px-5 py-3 rounded-full whitespace-nowrap shadow-xl ${
+                className={`text-[14px] uppercase tracking-[0.1em] font-black transition-all duration-500 xl:px-8 lg:px-5 py-3 rounded-full whitespace-nowrap shadow-xl ${
                   scrolled ? 'bg-[#1A1A1A] text-white hover:bg-brass' : 'bg-brass text-white hover:bg-white hover:text-[#1A1A1A]'
                 }`}
               >
