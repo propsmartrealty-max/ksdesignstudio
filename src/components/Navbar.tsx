@@ -193,7 +193,10 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                <Instagram size={24} className="text-white/20 hover:text-brass transition-all" />
                <Mail size={24} className="text-white/20 hover:text-brass transition-all" />
              </div>
-             <p className="text-white/40 text-[8px] uppercase tracking-[0.4em] font-black">KS DESIGN STUDIO PUNE</p>
+             <div className="flex flex-col items-center border-l-[2px] border-brass/30 pl-4">
+               <p className="text-white text-xl font-black tracking-tighter leading-none">KS <span className="text-brass">DESIGN</span></p>
+               <p className="text-white/40 text-[8px] uppercase tracking-[0.6em] font-bold mt-1">STUDIO PUNE</p>
+             </div>
           </div>
         </div>
       </div>
