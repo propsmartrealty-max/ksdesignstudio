@@ -48,6 +48,17 @@ const staticRoutes = [
   '/tectonic-series'
 ];
 
+const BLOGS = [
+  { id: 'pune-luxury-hub' },
+  { id: 'mumbai-minimalism' },
+  { id: 'wakad-design-evolution' },
+  { id: 'bandra-bohemian' },
+  { id: 'ravet-punawale-trends' },
+  { id: 'pune-interior-cost-guide-2026' },
+  { id: 'material-intelligence-guide' },
+  { id: 'small-home-interior-pune' }
+];
+
 function generateSitemap() {
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
@@ -62,6 +73,11 @@ function generateSitemap() {
     const slug = loc.toLowerCase().replace(/\s+/g, '-');
     xml += `  <url>\n    <loc>${BASE_URL}/#/interiors-in/${slug}</loc>\n    <priority>0.8</priority>\n  </url>\n`;
     xml += `  <url>\n    <loc>${BASE_URL}/#/luxury-design/${slug}</loc>\n    <priority>0.7</priority>\n  </url>\n`;
+  });
+
+  // Add blog routes
+  BLOGS.forEach(blog => {
+    xml += `  <url>\n    <loc>${BASE_URL}/#/knowledge/${blog.id}</loc>\n    <priority>0.6</priority>\n  </url>\n`;
   });
 
   xml += '</urlset>';

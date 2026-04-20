@@ -118,3 +118,37 @@ export const SEO_LONG_TAIL = [
   "home interior packages Pune price",
   "interior designer Pune with execution"
 ];
+
+export const SEO_BLOG_CLUSTERS = [
+  {
+    topic: "Pune Interior Costs 2026",
+    keywords: ["interior cost per sq ft Pune", "2BHK interior price Pune", "turnkey interior packages"],
+    slug: "pune-interior-cost-guide-2026"
+  },
+  {
+    topic: "Luxury Design Trends",
+    keywords: ["luxury interior Pune", "Deccan Tectonic style", "modern luxury homes"],
+    slug: "luxury-interior-trends-pune"
+  },
+  {
+    topic: "Small Home Solutions",
+    keywords: ["small flat interior ideas", "2BHK compact design", "space saving furniture Pune"],
+    slug: "small-home-interior-pune"
+  },
+  {
+    topic: "Material Intelligence",
+    keywords: ["best marble for flooring Pune", "modular kitchen materials", "timber vs veneer cost"],
+    slug: "material-intelligence-guide"
+  },
+  {
+    topic: "Area Specific: Baner",
+    keywords: ["top interior designers in Baner", "luxury apartments Baner design", "Baner interior cost"],
+    slug: "baner-interior-design-guide"
+  },
+  {
+    topic: "Area Specific: Kharadi",
+    keywords: ["interior designer in Kharadi Pune", "IT hub home design", "Kharadi real estate trends"],
+    slug: "kharadi-interior-design-guide"
+  }
+];
+

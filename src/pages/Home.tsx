@@ -14,6 +14,7 @@ import DesignLaboratory from '../components/DesignLaboratory';
 import HowItWorks from '../components/HowItWorks';
 import TrustRegistry from '../components/TrustRegistry';
 import MarketDominance from '../components/SEO/MarketDominance';
+import FAQSection from '../components/SEO/FAQSection';
 
 export default function Home() {
   return (
@@ -85,6 +86,8 @@ export default function Home() {
       <section id="laboratory">
         <DesignLaboratory />
       </section>
+
+      <FAQSection limit={4} />
 
       <MarketDominance />
 

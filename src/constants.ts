@@ -248,13 +248,47 @@ export const BLOGS: Blog[] = [
   },
   {
     id: 'ravet-punawale-trends',
-    title: 'Design Horizons: PCMC’s Northbound Expansion',
-    excerpt: 'Spatial strategies for the emerging luxury clusters of Ravet and Punawale.',
+    title: 'Ravet & Punawale: The New Frontier of Design',
+    excerpt: 'How PCMC’s growth hubs are redefining residential interior expectations.',
     date: 'April 05, 2024',
-    category: 'PCMC Trends',
+    category: 'Market Trends',
     author: 'KS Design Studio',
     imageUrl: blogRavetTrends,
-    alt: 'KS Design Studio Pune | Luxury Trends in Ravet & Punawale PCMC'
+    alt: 'KS Design Studio Pune | Interior Design Trends in Ravet & Punawale'
+  },
+  // Algorithmic Virtual Blogs (pSEO Cluster)
+  {
+    id: 'pune-interior-cost-guide-2026',
+    title: 'Pune Interior Cost Guide 2026: Sq Ft Analysis',
+    excerpt: 'A comprehensive breakdown of design and execution costs for Pune homeowners.',
+    date: 'April 18, 2024',
+    category: 'Pricing Guide',
+    author: 'KS Design Studio AI',
+    imageUrl: blogPuneLuxury, // Reuse or generic luxury
+    isVirtual: true,
+    alt: 'KS Design Studio Pune | Interior Design Cost per sq ft Pune 2026'
+  },
+  {
+    id: 'material-intelligence-guide',
+    title: 'Material Intelligence: Selecting the Best Stones & Timbers',
+    excerpt: 'Detailed comparison of Statuario, Basalt, and American Walnut for your home.',
+    date: 'April 19, 2024',
+    category: 'Material Library',
+    author: 'KS Design Studio AI',
+    imageUrl: blogWakadTech,
+    isVirtual: true,
+    alt: 'KS Design Studio Pune | Best Interior Materials Guide Pune'
+  },
+  {
+    id: 'small-home-interior-pune',
+    title: 'Space-Saving Masterclass: Small Home Solutions in Pune',
+    excerpt: 'Maximizing the spatial flow of 2BHK apartments in high-density hubs.',
+    date: 'April 20, 2024',
+    category: 'Design Tips',
+    author: 'KS Design Studio AI',
+    imageUrl: blogMumbaiMinimalism,
+    isVirtual: true,
+    alt: 'KS Design Studio Pune | Small Flat Interior Ideas Pune'
   },
   {
     id: 'lighting-architecture-2024',

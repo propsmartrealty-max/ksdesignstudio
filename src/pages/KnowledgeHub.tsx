@@ -3,7 +3,8 @@ import { BLOGS, MATERIAL_TAXONOMY, STYLE_MONOLOGUES } from '../constants';
 import BlogCard from '../components/KnowledgeHub/BlogCard';
 import InteriorGuide from '../components/KnowledgeHub/InteriorGuide';
 import Infographics from '../components/Interactive/Infographics';
-import { ArrowRight, BookOpen, Lightbulb, PieChart, Shield, Pencil } from 'lucide-react';
+import { ArrowRight, BookOpen, Lightbulb, PieChart, Shield, Pencil, Sparkles } from 'lucide-react';
+import FAQSection from '../components/SEO/FAQSection';
 
 const KnowledgeHub: React.FC = () => {
   return (
@@ -72,11 +73,21 @@ const KnowledgeHub: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {BLOGS.map(blog => (
-              <BlogCard key={blog.id} blog={blog} />
+              <div key={blog.id} className="relative group">
+                <BlogCard blog={blog} />
+                {blog.isVirtual && (
+                  <div className="absolute top-4 right-4 bg-brass/90 text-white text-[8px] font-black px-3 py-1 rounded-full uppercase tracking-widest flex items-center space-x-1 shadow-lg backdrop-blur-sm">
+                    <Sparkles size={10} />
+                    <span>AI Enhanced</span>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
         </div>
       </section>
+
+      <FAQSection category="trends" limit={3} className="border-t border-slate-50" />
 
       {/* Visual Infographics Section */}
       <div id="infographics">

@@ -51,6 +51,11 @@ async function initiateIndexing() {
     "kumar-megapolis", "anp-landmarks", "kohinoor-sapphire", "kekarav-bungalows"
   ];
 
+  const blogSlugs = [
+    "pune-luxury-hub", "mumbai-minimalism", "wakad-design-evolution", "bandra-bohemian",
+    "ravet-punawale-trends", "pune-interior-cost-guide-2026", "material-intelligence-guide", "small-home-interior-pune"
+  ];
+
   const BASE_URL = 'https://ksdesignstudio.in';
 
   const urlsToIndex = [
@@ -61,7 +66,8 @@ async function initiateIndexing() {
     `${BASE_URL}/#/contact`,
     ...locations.map(loc => `${BASE_URL}/#/interiors-in/${loc}`),
     ...locations.map(loc => `${BASE_URL}/#/luxury-design/${loc}`),
-    ...projectSlugs.map(slug => `${BASE_URL}/#/interiors-at/${slug}`)
+    ...projectSlugs.map(slug => `${BASE_URL}/#/interiors-at/${slug}`),
+    ...blogSlugs.map(slug => `${BASE_URL}/#/knowledge/${slug}`)
   ];
 
   console.log(`Initiating Google Indexing for ${urlsToIndex.length} high-fidelity routes...`);

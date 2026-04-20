@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { SEO_LOCATIONS, SEO_LONG_TAIL, SEO_PROPERTY_TYPES, PUNE_NEIGHBORHOOD_USPS } from '../registry/seo_registry';
 import { MapPin, CheckCircle, ArrowRight, Star, Map as MapIcon, BrainCircuit, ShieldCheck, Sparkles } from 'lucide-react';
 import { generateLocationBrief } from '../services/gemini';
+import FAQSection from '../components/SEO/FAQSection';
 
 const LocationLanding: React.FC = () => {
   const { location } = useParams<{ location: string }>();
@@ -239,6 +240,8 @@ const LocationLanding: React.FC = () => {
               </div>
            </div>
         </div>
+
+        <FAQSection limit={5} category="local" className="mt-20" />
       </div>
     </div>
   );
