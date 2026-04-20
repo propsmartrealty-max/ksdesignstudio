@@ -17,10 +17,10 @@ const Breadcrumbs: React.FC = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://ksdesignstudio.in/"
+        "item": "https://ksdesignstudiopune.vercel.app/"
       },
       ...pathnames.map((value, index) => {
-        const url = `https://ksdesignstudio.in/#/${pathnames.slice(0, index + 1).join('/')}`;
+        const url = `https://ksdesignstudiopune.vercel.app/${pathnames.slice(0, index + 1).join('/')}`;
         const name = value.charAt(0).toUpperCase() + value.slice(1).replace(/-/g, ' ');
         return {
           "@type": "ListItem",

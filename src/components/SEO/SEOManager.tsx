@@ -48,7 +48,7 @@ const SEOManager: React.FC = () => {
 
     // Update canonical link
     let canonical = document.querySelector('link[rel="canonical"]');
-    const canonicalUrl = `https://ksdesignstudio.in${location.pathname === '/' ? '' : '#' + location.pathname}`;
+    const canonicalUrl = `https://ksdesignstudiopune.vercel.app${location.pathname === '/' ? '' : location.pathname}`;
     if (canonical) {
       canonical.setAttribute('href', canonicalUrl);
     } else {
